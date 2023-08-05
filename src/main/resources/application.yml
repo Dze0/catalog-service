@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 9001
   tomcat:
     connection-timeout: 2s
     keep-alive-timeout: 15s
@@ -28,3 +28,6 @@ management:
     web:
       exposure:
         include: refresh
+
+polar:
+  greeting: "Welcome to the local book catalog"
