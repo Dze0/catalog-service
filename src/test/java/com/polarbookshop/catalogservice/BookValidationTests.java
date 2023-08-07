@@ -21,14 +21,15 @@ public class BookValidationTests {
 
     @Test
     void whenAllFieldsCorrectThenValidationSucceeds(){
-        var book = new Book(123L,"1234567890", "Title", "Author", 9.90,null,null,0);
+        var book = new Book(123L,"1234567890", "Title", "Author", 9.90,"publisher",
+                null,null,0);
         var violations = validator.validate(book);
         assertThat(violations).isEmpty();
     }
 
     @Test
     void whenIsbnDefinedBuIncorrectThenValidationFails(){
-        var book = new Book(123L, "a123123123123", "Title", "Author", 9.90, null,null,0);
+        var book = new Book(123L, "a123123123123", "Title", "Author", 9.90, "publisher",null,null,0);
         var violations = validator.validate(book);
         assertThat(violations).hasSize(1);
     }
